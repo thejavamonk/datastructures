@@ -23,6 +23,7 @@ public class SingleLinkedList {
 
 		while (p != null) {
 			System.out.println(p.info + " ");
+			p = p.link;
 		}
 		System.out.println();
 	}
