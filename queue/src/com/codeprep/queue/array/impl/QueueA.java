@@ -2,20 +2,20 @@ package com.codeprep.queue.array.impl;
 
 import java.util.NoSuchElementException;
 
-public class Queue {
+public class QueueA {
 	
 	private int [] queueArray;
 	private int front;
 	private int rear;
 	
-	public Queue(){
+	public QueueA(){
 		
 		queueArray = new int[10];
 		front = -1;
 		rear = -1;
 	}
 	
-	public Queue(int maxSize){
+	public QueueA(int maxSize){
 		
 		queueArray = new int[maxSize];
 		front = -1;

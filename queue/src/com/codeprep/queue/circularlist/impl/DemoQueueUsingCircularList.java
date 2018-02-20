@@ -1,14 +1,14 @@
-package com.codeprep.queue.array.impl;
+package com.codeprep.queue.circularlist.impl;
 
 import java.util.Scanner;
 
-public class QueueUsingArrayDemo {
+public class DemoQueueUsingCircularList {
 
 	public static void main(String[] args) {
 		
 		int choice, x;
 		Scanner scan = new Scanner(System.in);
-		QueueA queue = new QueueA(8);
+		QueueCL queueCL = new QueueCL();
 		
 		while(true) {
 			System.out.println("1. insert an element in the queue");
@@ -28,19 +28,19 @@ public class QueueUsingArrayDemo {
 			case 1:
 				System.out.println("Enter the element to be inserted : ");
 				x = scan.nextInt();
-				queue.insert(x);
+				queueCL.insert(x);
 				break;
 			case 2:
-				x = queue.delete();
+				x = queueCL.delete();
 				System.out.println("Element deleted is : "+x);
 				break;
 			case 3:
-				System.out.println("Element at the front is : "+queue.peek());
+				System.out.println("Element at the front is : "+queueCL.peek());
 				break;
 			case 4:
-				queue.display();
+				queueCL.display();
 			case 5:
-				System.out.println("Size of queue is "+queue.size());
+				System.out.println("Size of queue is "+queueCL.size());
 				break;
 			default:
 				System.out.println("Wrong choice!");
