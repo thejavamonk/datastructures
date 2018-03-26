@@ -82,9 +82,44 @@ public class DemoPostfix {
 		}
 	}
 	
-	private static String evaluatePostFix(String postfix) {
+	private static int evaluatePostFix(String postfix) {
+		
+		StackInt stack = new StackInt();
+		int x, y;
+		
+		for(int i = 0; i < postfix.length(); i++) {
+			if(Character.isDigit(postfix.charAt(i))) {
+				stack.push(Character.getNumericValue(postfix.charAt(i)));
+			}
+			else {
+				
+				x = stack.pop();
+				y = stack.pop();
+				switch (postfix.charAt(i)) {
+				case '+':
+					stack.push(y + x);
+				case '-':
+					stack.push(y - x);
+				case '*':
+					stack.push(y * x);
+				case '/':
+					stack.push(y / x);
+				case '%':
+					stack.push(y % x);
+				case '^':
+					stack.push(power(y,x));
+					break;
+				default:
+					System.out.println("Unsupported expression");
+					break;
+				}
+			}
+		}
+		return stack.pop();
+	}
 
-		return null;
+	private static int power(int y, int x) {
+		return (int) Math.pow(y, x);
 	}
 
 }
