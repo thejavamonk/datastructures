@@ -87,5 +87,52 @@ public class BinaryTree {
 			return;
 		}
 		QueueA queue = new QueueA(20);
+		queue.insert(root);
+		
+		while(!queue.isEmpty()) {
+			p = queue.delete();
+			System.out.println(p.info);
+			if(p.lChild != null) {
+				queue.insert(p.lChild);
+			}
+			if(p.rChild != null) {
+				queue.insert(p.rChild);
+			}
+		}
+		System.out.println();
+	}
+	
+	public int height() {
+		
+		return height(root);
+	}
+
+	private int height(Node p) {
+		
+		int hL;
+		int hR;
+		
+		if(p == null) {
+			return 0;
+		}
+		hL = height(p.lChild);
+		hR = height(p.rChild);
+		
+		if(hL > hR) {
+			return 1 + hL;
+		}
+		else {
+			return 1 + hR;
+		}
+	}
+	
+	public void createTree() {
+		
+		root = new Node('P');
+		root.lChild = new Node('Q');
+		root.rChild = new Node('R');
+		root.lChild.lChild = new Node('A');
+		root.lChild.rChild = new Node('B');
+		root.rChild.lChild = new Node('X');
 	}
 }

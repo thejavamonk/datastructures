@@ -4,20 +4,20 @@ import java.util.NoSuchElementException;
 
 public class QueueA {
 	
-	private int [] queueArray;
+	private Node [] queueArray;
 	private int front;
 	private int rear;
 	
 	public QueueA(){
 		
-		queueArray = new int[10];
+		queueArray = new Node[10];
 		front = -1;
 		rear = -1;
 	}
 	
 	public QueueA(int maxSize){
 		
-		queueArray = new int[maxSize];
+		queueArray = new Node[maxSize];
 		front = -1;
 		rear = -1;
 	}
@@ -41,7 +41,7 @@ public class QueueA {
 		}
 	}
 	
-	public void insert(int x){
+	public void insert(Node x){
 		
 		if(isFull()){
 			System.out.println("Queue Overflow");
@@ -54,9 +54,9 @@ public class QueueA {
 		queueArray[rear] = x;
 	}
 	
-	public int delete(){
+	public Node delete(){
 		
-		int x;
+		Node x;
 		if(isEmpty()){
 			System.out.println("Queue Underflow");
 			throw new NoSuchElementException();
@@ -66,7 +66,7 @@ public class QueueA {
 		return x;
 	}
 	
-	public int peek(){
+	public Node peek(){
 		
 		if(isEmpty()){
 			System.out.println("Queue Underflow");
