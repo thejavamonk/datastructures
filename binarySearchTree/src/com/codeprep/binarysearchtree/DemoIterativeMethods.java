@@ -37,5 +37,6 @@ public class DemoIterativeMethods {
 				break;
 			}
 		}
+		scanner.close();
 	}
 }
